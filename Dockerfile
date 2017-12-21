@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk as builder
+MAINTAINER Alexander Sparkowsky <info@roamingthings.de>
 
 USER root
 
