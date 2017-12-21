@@ -13,7 +13,7 @@ Build the image by using the provided `build.sh` script.
 If you want to reuse a container you can set it up with the following command.
 
 ```
-docker run --rm -it -v $(pwd):/home/gradle -w /home/gradle --name kotlinc roamingthings/kotlin-native /bin/bash
+docker run --rm -it -v $(pwd):/home/gradle -w /home/gradle roamingthings/kotlin-native /bin/bash
 ```
 
 This will map the current directory (your project folder) to the build-directory of the container.
@@ -25,7 +25,7 @@ If you map your `.ssh` folder by adding `-v $HOME:/home/gradle/.ssh` you can als
 
 The command combining all the above options is:
 ```
-docker run --rm -it -v $(pwd):/home/gradle -v $HOME/.konan:/home/gradle/.konan -v $HOME/.gradle:/home/gradle/.gradle -v $HOME:/home/gradle/.ssh -w /home/gradle --name kotlinc roamingthings/kotlin-native /bin/bash
+docker run --rm -it -v $(pwd):/home/gradle -v $HOME/.konan:/home/gradle/.konan -v $HOME/.gradle:/home/gradle/.gradle -v $HOME:/home/gradle/.ssh -w /home/gradle roamingthings/kotlin-native /bin/bash
 ```
 
 If you want to use the container for automatic building of your project exchange `/bin/bash' with your build command.
@@ -33,7 +33,7 @@ If you want to use the container for automatic building of your project exchange
 For example the following command will execute a local build script that's part of your project
 
 ```
-docker run --rm -it -v $(pwd):/home/gradle -v $HOME/.konan:/home/gradle/.konan -v $HOME/.gradle:/home/gradle/.gradle -v $HOME:/home/gradle/.ssh -w /home/gradle --name kotlinc roamingthings/kotlin-native ./build.sh
+docker run --rm -v $(pwd):/home/gradle -v $HOME/.konan:/home/gradle/.konan -v $HOME/.gradle:/home/gradle/.gradle -v $HOME:/home/gradle/.ssh -w /home/gradle roamingthings/kotlin-native ./build.sh
 ```
 
 ## Notes about image size
