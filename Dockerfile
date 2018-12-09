@@ -3,7 +3,7 @@ MAINTAINER Alexander Sparkowsky <info@roamingthings.de>
 
 USER root
 
-ARG KOTLIN_NATIVE_VERSION=v0.5
+ARG KOTLIN_NATIVE_VERSION=v1.0.3
 
 RUN apt-get update && apt-get install -yq \
         libncurses-dev && \
